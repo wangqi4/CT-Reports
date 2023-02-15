@@ -126,7 +126,7 @@
 "UTILITIES:","U->RoboCopy:Y@EXEDIR@\RoboCopy.va <~>cycletime_raw_mtd.csv<~> <~>\\VNATSHFS.intel.com\VNATAnalysis$\MAOATM\Config\VN\MFGPortal\ScoreCard\CYCLETIME<~> <~>.<~> <~>100<~> <~>30<~> <~>Y<~> <~><~> <~>N<~>"
 "UTILITIESDESC:","Robocopy Files/Folders"
 "<---- New Query ---->","5:3:UTILITIES"
-"UTILITIES:","U->Write-File:Ycycletime_goal.csv<SOF><{><}>prodgroup3,goal<{><}>ADP,4.5<{><}>ADLP282,4.5<{><}>ADLP682,4.5<{><}>PKR,7<{><}>RPLP282,7<{><}>RPLP682,7<{><}>TGLUP3,4<{><}>TGLH81,6<{><}><EOF>"
+"UTILITIES:","U->Write-File:Ycycletime_goal.csv<SOF><{><}>prodgroup3,goal<{><}>ADP,4.5<{><}>ADLP282,4.5<{><}>ADLP682,4.5<{><}>PKR,7<{><}>RPLP282,6.5<{><}>RPLP682,6.5<{><}>TGLUP3,4<{><}>TGLH81,6<{><}><EOF>"
 "UTILITIESDESC:","Write the cycle time target of each product"
 "<---- New Query ---->","5:3:UTILITIES"
 "UTILITIES:","U->Write-File:Ycycletime_product.csv<SOF><{><}>product<{><}>ADP<{><}>ADLP282<{><}>ADLP682<{><}>ADLS881<{><}>PKR<{><}>RPLP282<{><}>RPLP682<{><}>TGLUP3<{><}>TGLH81<{><}><EOF>"
@@ -278,6 +278,7 @@
 
 
 
+
 /END_EMBED
 /EMBED=VG2;VF_Calculate Cycle Time Week to Date
 "VERSION:","1.0"
@@ -348,6 +349,7 @@
 "AND","","a0.owner","=","'PROD'","","","c","csv","SQL->a0.[owner]",""
 "AND","","a0.prodgroup3","In Group",".\cycletime_product.csv:1","","","c","csv","SQL->a0.[prodgroup3]",""
 "AND","","a0.device","Not In","'8HXMMV'</comma\>'8HXMSV'</comma\>'8EXSMV'</comma\>'8EXSSV'</comma\>'8ABLMV'</comma\>'8ABLHV'</comma\>'8ABLSV'</comma\>'8ABLJV'</comma\>'8ADNMV'</comma\>'8ADNJV'</comma\>'8ADNSV'</comma\>'8ADNHV'","","","c","csv","SQL->a0.[device]",""
+
 
 
 
@@ -440,6 +442,7 @@
 
 
 
+
 /END_EMBED
 /EMBED=VG2;Summary WTD and MTD
 "VERSION:","1.0"
@@ -503,6 +506,7 @@
 "AND","","f(x)->{check_latest}","=","'Y'","","","cx","@IF@2","SQL->{col15}",""
 "AND","","a0.prodgroup3","In Group",".\cycletime_product.csv:1. product","","","c","csv","SQL->a0.[prodgroup3]",""
 "AND","","a0.device","Not In","'8HXMMV'</comma\>'8HXMSV'</comma\>'8EXSMV'</comma\>'8EXSSV'</comma\>'8ABLMV'</comma\>'8ABLHV'</comma\>'8ABLSV'</comma\>'8ABLJV'</comma\>'8ADNMV'</comma\>'8ADNJV'</comma\>'8ADNSV'</comma\>'8ADNHV'","","","c","csv","SQL->a0.[device]",""
+
 
 
 
@@ -624,6 +628,7 @@
 
 
 
+
 /END_EMBED
 /EMBED=VG2;CycleTime WTD and MTD summary
 "VERSION:","1.0"
@@ -708,6 +713,7 @@
 
 
 
+
 /END_EMBED
 /EMBED=VG2;VF_75_WTD
 "VERSION:","1.0"
@@ -773,6 +779,7 @@
 "AND","","f(x)->{check_latest}","=","'Y'","","","cx","@IF@2","SQL->{col15}",""
 "AND","","a0.prodgroup3","In Group",".\cycletime_product.csv:1. product","","","c","csv","SQL->a0.[prodgroup3]",""
 "AND","","a0.device","Not In","'8HXMMV'</comma\>'8HXMSV'</comma\>'8EXSMV'</comma\>'8EXSSV'</comma\>'8ABLMV'</comma\>'8ABLHV'</comma\>'8ABLSV'</comma\>'8ABLJV'</comma\>'8ADNMV'</comma\>'8ADNJV'</comma\>'8ADNSV'</comma\>'8ADNHV'","","","c","csv","SQL->a0.[device]",""
+
 
 
 
@@ -879,6 +886,7 @@
 "AND","","f(x)->{check_month}","=","'Y'","","","cx","@IF@2","All->{col27}",""
 "AND","","a0.prodgroup3","In Group",".\cycletime_product.csv:1","","","c","csv","SQL->a0.[prodgroup3]",""
 "AND","","a0.device","Not In","'8HXMMV'</comma\>'8HXMSV'</comma\>'8EXSMV'</comma\>'8EXSSV'</comma\>'8ABLMV'</comma\>'8ABLHV'</comma\>'8ABLSV'</comma\>'8ABLJV'</comma\>'8ADNMV'</comma\>'8ADNJV'</comma\>'8ADNSV'</comma\>'8ADNHV'","","","c","csv","SQL->a0.[device]",""
+
 
 
 
@@ -1079,6 +1087,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 
 
 
+
 /END_EMBED
 /EMBED=VG2;Operation Queue Time
 "VERSION:","1.0"
@@ -1170,6 +1179,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 "AND","","a0.prodgroup3","In Group",".\cycletime_product.csv:1. product","","","c","csv","SQL->a0.[prodgroup3]",""
 "AND","","a2.operation","In Temp"," {Sqlite (all)}^^^^^999 : Sqlite->a0.location","",".","c","f_operation","a2->o.operation","SQL->{col2}"
 "AND","","f(x)->{operationcount}","<=","10","","","nx","@IF@3","SQL->{col7}",""
+
 
 
 
@@ -1408,6 +1418,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 
 
 
+
 /END_EMBED
 /EMBED=VG2;Ge WTD Cycletime for all product all site
 "VERSION:","1.0"
@@ -1470,6 +1481,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 "FILTERGRID:"
 "AND","","a0.owner","=","'PROD'","","","c","csv","SQL->a0.[owner]",""
 "AND","","a0.device","Not In","'8HXMMV'</comma\>'8HXMSV'</comma\>'8EXSMV'</comma\>'8EXSSV'</comma\>'8ABLMV'</comma\>'8ABLHV'</comma\>'8ABLSV'</comma\>'8ABLJV'</comma\>'8ADNMV'</comma\>'8ADNJV'</comma\>'8ADNSV'</comma\>'8ADNHV'","","","c","csv","SQL->a0.[device]",""
+
 
 
 
@@ -1587,6 +1599,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 
 
 
+
 /END_EMBED
 /EMBED=VG2;Execute Python
 "VERSION:","1.0"
@@ -1637,6 +1650,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 "QUERYGRID:"
 "JOINGRID:"
 "FILTERGRID:"
+
 
 
 
@@ -1733,6 +1747,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 "","","Sqlite->a1.ww                                                                                                    : SQL->{col25}","=","Sqlite->a0.period                                                                                                    : SQL->{col19}",""
 "FILTERGRID:"
 "AND","","a0.owner","=","'PROD'","","","c","csv","SQL->a0.[owner]",""
+
 
 
 
@@ -1958,6 +1973,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 
 
 
+
 /END_EMBED
 /EMBED=VG2;all
 "VERSION:","1.0"
@@ -2019,6 +2035,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 "JOINGRID:"
 "FILTERGRID:"
 "AND","","a0.device","Not In","'8HXMMV'</comma\>'8HXMSV'</comma\>'8EXSMV'</comma\>'8EXSSV'</comma\>'8ABLMV'</comma\>'8ABLHV'</comma\>'8ABLSV'</comma\>'8ABLJV'</comma\>'8ADNMV'</comma\>'8ADNJV'</comma\>'8ADNSV'</comma\>'8ADNHV'","","","c","csv","SQL->a0.[device]",""
+
 
 
 
@@ -2126,6 +2143,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 
 
 
+
 /END_EMBED
 /EMBED=VG2;CDAT CT
 "VERSION:","1.0"
@@ -2186,6 +2204,7 @@ Type<\\>Key<\\>COL1<\\>COL2<\\>COL3<\\>COL4<\\>COL5<\\>COL6<\\>COL7<\\>COL8<\\>C
 "JOINGRID:"
 "FILTERGRID:"
 "AND","","a0.prodgroup3","Not In","'CPXXCP'</comma\>'ICXXCP'</comma\>'ICLU42'</comma\>'CMLU42'</comma\>'TGLH81'</comma\>'CMLS102'</comma\>'TGP'</comma\>'RKLS81'","","","c","csv","SQL->a0.[prodgroup3]",""
+
 
 
 /END_EMBED
